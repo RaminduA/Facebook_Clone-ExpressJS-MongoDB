@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+[![Express Logo](https://i.cloudup.com/zfY6lL7eFa-3000x3000.png)](http://expressjs.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  Fast, unopinionated, minimalist web framework for [Node.js](http://nodejs.org).
 
-## Available Scripts
+  [![NPM Version][npm-version-image]][npm-url]
+  [![NPM Install Size][npm-install-size-image]][npm-install-size-url]
+  [![NPM Downloads][npm-downloads-image]][npm-downloads-url]
 
-In the project directory, you can run:
+```js
+const express = require('express')
+const app = express()
 
-### `npm start`
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+app.listen(3000)
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+This is a [Node.js](https://nodejs.org/en/) module available through the
+[npm registry](https://www.npmjs.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before installing, [download and install Node.js](https://nodejs.org/en/download/).
+Node.js 0.10 or higher is required.
 
-### `npm run build`
+If this is a brand new project, make sure to create a `package.json` first with
+the [`npm init` command](https://docs.npmjs.com/creating-a-package-json-file).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Installation is done using the
+[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```console
+$ npm install express
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow [our installing guide](http://expressjs.com/en/starter/installing.html)
+for more information.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  * Robust routing
+  * Focus on high performance
+  * Super-high test coverage
+  * HTTP helpers (redirection, caching, etc)
+  * View system supporting 14+ template engines
+  * Content negotiation
+  * Executable for generating applications quickly
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Docs & Community
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  * [Website and Documentation](http://expressjs.com/) - [[website repo](https://github.com/expressjs/expressjs.com)]
+  * [#express](https://webchat.freenode.net/?channels=express) on freenode IRC
+  * [GitHub Organization](https://github.com/expressjs) for Official Middleware & Modules
+  * Visit the [Wiki](https://github.com/expressjs/express/wiki)
+  * [Google Group](https://groups.google.com/group/express-js) for discussion
+  * [Gitter](https://gitter.im/expressjs/express) for support and discussion
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**PROTIP** Be sure to read [Migrating from 3.x to 4.x](https://github.com/expressjs/express/wiki/Migrating-from-3.x-to-4.x) as well as [New features in 4.x](https://github.com/expressjs/express/wiki/New-features-in-4.x).
 
-## Learn More
+## Quick Start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  The quickest way to get started with express is to utilize the executable [`express(1)`](https://github.com/expressjs/generator) to generate an application as shown below:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Install the executable. The executable's major version will match Express's:
 
-### Code Splitting
+```console
+$ npm install -g express-generator@4
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  Create the app:
 
-### Analyzing the Bundle Size
+```console
+$ express /tmp/foo && cd /tmp/foo
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  Install dependencies:
 
-### Making a Progressive Web App
+```console
+$ npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  Start the server:
 
-### Advanced Configuration
+```console
+$ npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  View the website at: http://localhost:3000
 
-### Deployment
+## Philosophy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  The Express philosophy is to provide small, robust tooling for HTTP servers, making
+  it a great solution for single page applications, websites, hybrids, or public
+  HTTP APIs.
 
-### `npm run build` fails to minify
+  Express does not force you to use any specific ORM or template engine. With support for over
+  14 template engines via [Consolidate.js](https://github.com/tj/consolidate.js),
+  you can quickly craft your perfect framework.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Examples
+
+  To view the examples, clone the Express repo and install the dependencies:
+
+```console
+$ git clone git://github.com/expressjs/express.git --depth 1
+$ cd express
+$ npm install
+```
+
+  Then run whichever example you want:
+
+```console
+$ node examples/content-negotiation
+```
+
+## Contributing
+
+  [![Linux Build][github-actions-ci-image]][github-actions-ci-url]
+  [![Windows Build][appveyor-image]][appveyor-url]
+  [![Test Coverage][coveralls-image]][coveralls-url]
+
+The Express.js project welcomes all constructive contributions. Contributions take many forms,
+from code for bug fixes and enhancements, to additions and fixes to documentation, additional
+tests, triaging incoming pull requests and issues, and more!
+
+See the [Contributing Guide](Contributing.md) for more technical details on contributing.
+
+### Security Issues
+
+If you discover a security vulnerability in Express, please see [Security Policies and Procedures](Security.md).
+
+### Running Tests
+
+To run the test suite, first install the dependencies, then run `npm test`:
+
+```console
+$ npm install
+$ npm test
+```
+
+## People
+
+The original author of Express is [TJ Holowaychuk](https://github.com/tj)
+
+The current lead maintainer is [Douglas Christopher Wilson](https://github.com/dougwilson)
+
+[List of all contributors](https://github.com/expressjs/express/graphs/contributors)
+
+## License
+
+  [MIT](LICENSE)
+
+[appveyor-image]: https://badgen.net/appveyor/ci/dougwilson/express/master?label=windows
+[appveyor-url]: https://ci.appveyor.com/project/dougwilson/express
+[coveralls-image]: https://badgen.net/coveralls/c/github/expressjs/express/master
+[coveralls-url]: https://coveralls.io/r/expressjs/express?branch=master
+[github-actions-ci-image]: https://badgen.net/github/checks/expressjs/express/master?label=linux
+[github-actions-ci-url]: https://github.com/expressjs/express/actions/workflows/ci.yml
+[npm-downloads-image]: https://badgen.net/npm/dm/express
+[npm-downloads-url]: https://npmcharts.com/compare/express?minimal=true
+[npm-install-size-image]: https://badgen.net/packagephobia/install/express
+[npm-install-size-url]: https://packagephobia.com/result?p=express
+[npm-url]: https://npmjs.org/package/express
+[npm-version-image]: https://badgen.net/npm/v/express
